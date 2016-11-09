@@ -40,14 +40,14 @@ func main() {
 // Handles incoming requests.
 func handleRequest(conn net.Conn) {
     buf, _, _ := bufio.NewReader(conn).ReadLine()
-    cmd := exec.Command("clip")
+    cmd := exec.Command("pbcopy")
     stdin, _ := cmd.StdinPipe()
     io.WriteString(stdin, string(buf))
     stdin.Close()
-    out, _ := cmd.Output()
-    fmt.Println("Copy String: " + string(out))
+    cmd.Output()
+    fmt.Println("Copy String: " + string(buf))
     // Send a response back to person contacting us.
-    conn.Write([]byte("Message received."))
+    // conn.Write([]byte("Message received."))
     // Close the connection when you're done with it.
     conn.Close()
 }
