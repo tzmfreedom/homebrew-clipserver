@@ -1,7 +1,7 @@
 class Clipserver < Formula
   desc ""
   homepage ""
-  url "https://github.com/tzmfreedom/clipserver.git"
+  url "https://github.com/tzmfreedom/homebrew-clipserver.git"
   sha256 ""
   version "0.0.1"
 
